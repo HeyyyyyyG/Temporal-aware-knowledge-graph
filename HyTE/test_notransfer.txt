@@ -1,8 +1,0 @@
-nohup: ignoring input
-yago_data_neg_sample_5_mar_10_l2_0.00
-Epoch 155 : test_tail rank 110.94783032666992	 test_head rank 1076.2540224280838
-Epoch 155 : test_tail HIT@10 34.71477328132618	 test_head HIT@!) 13.066796684544125
-Traceback (most recent call last):
-  File "result_eval.py", line 16, in <module>
-    model_output_head = open('results/'+args.model+'/'+args.eval_mode+'_head_pred_{}.txt'.format(k))
-FileNotFoundError: [Errno 2] No such file or directory: 'results/yago_data_neg_sample_5_mar_10_l2_0.00/test_head_pred_310.txt'
