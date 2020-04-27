@@ -1,0 +1,301 @@
+nohup: ignoring input
+yago_data_neg_sample_5_mar_10_l2_0.00_transfer
+Epoch 5 : valid_tail rank 948.560606060606	 valid_head rank 1871.0654936461387
+Epoch 5 : valid_tail HIT@10 14.41837732160313	 valid_head HIT@!) 1.270772238514174
+------------------------------------------
+Best Validation Epoch till now Epoch 5, tail rank: 948.560606060606, head rank: 1871.0654936461387
+------------------------------------------
+Epoch 10 : valid_tail rank 836.8934506353861	 valid_head rank 1701.8010752688172
+Epoch 10 : valid_tail HIT@10 23.50928641251222	 valid_head HIT@!) 9.090909090909092
+------------------------------------------
+Best Validation Epoch till now Epoch 10, tail rank: 836.8934506353861, head rank: 1701.8010752688172
+------------------------------------------
+Epoch 15 : valid_tail rank 808.9242424242424	 valid_head rank 1679.5757575757575
+Epoch 15 : valid_tail HIT@10 28.592375366568916	 valid_head HIT@!) 14.95601173020528
+------------------------------------------
+Best Validation Epoch till now Epoch 15, tail rank: 808.9242424242424, head rank: 1679.5757575757575
+------------------------------------------
+Epoch 20 : valid_tail rank 752.1906158357772	 valid_head rank 1622.0865102639295
+Epoch 20 : valid_tail HIT@10 30.058651026392962	 valid_head HIT@!) 15.786901270772239
+------------------------------------------
+Best Validation Epoch till now Epoch 20, tail rank: 752.1906158357772, head rank: 1622.0865102639295
+------------------------------------------
+Epoch 25 : valid_tail rank 701.0513196480938	 valid_head rank 1566.220430107527
+Epoch 25 : valid_tail HIT@10 30.889540566959923	 valid_head HIT@!) 16.715542521994134
+------------------------------------------
+Best Validation Epoch till now Epoch 25, tail rank: 701.0513196480938, head rank: 1566.220430107527
+------------------------------------------
+Epoch 30 : valid_tail rank 655.0948191593353	 valid_head rank 1515.2086999022483
+Epoch 30 : valid_tail HIT@10 31.2316715542522	 valid_head HIT@!) 17.05767350928641
+------------------------------------------
+Best Validation Epoch till now Epoch 30, tail rank: 655.0948191593353, head rank: 1515.2086999022483
+------------------------------------------
+Epoch 35 : valid_tail rank 613.4266862170088	 valid_head rank 1474.4335288367547
+Epoch 35 : valid_tail HIT@10 31.573802541544477	 valid_head HIT@!) 17.44868035190616
+------------------------------------------
+Best Validation Epoch till now Epoch 35, tail rank: 613.4266862170088, head rank: 1474.4335288367547
+------------------------------------------
+Epoch 40 : valid_tail rank 581.2189638318671	 valid_head rank 1439.1720430107528
+Epoch 40 : valid_tail HIT@10 32.16031280547409	 valid_head HIT@!) 17.595307917888565
+------------------------------------------
+Best Validation Epoch till now Epoch 40, tail rank: 581.2189638318671, head rank: 1439.1720430107528
+------------------------------------------
+Epoch 45 : valid_tail rank 559.0043988269795	 valid_head rank 1408.188660801564
+Epoch 45 : valid_tail HIT@10 32.16031280547409	 valid_head HIT@!) 17.98631476050831
+------------------------------------------
+Best Validation Epoch till now Epoch 45, tail rank: 559.0043988269795, head rank: 1408.188660801564
+------------------------------------------
+Epoch 50 : valid_tail rank 543.3621700879766	 valid_head rank 1379.9560117302053
+Epoch 50 : valid_tail HIT@10 32.55131964809384	 valid_head HIT@!) 17.98631476050831
+------------------------------------------
+Best Validation Epoch till now Epoch 50, tail rank: 543.3621700879766, head rank: 1379.9560117302053
+------------------------------------------
+Epoch 55 : valid_tail rank 532.6402737047898	 valid_head rank 1357.6270772238515
+Epoch 55 : valid_tail HIT@10 32.111436950146626	 valid_head HIT@!) 17.888563049853374
+------------------------------------------
+Best Validation Epoch till now Epoch 55, tail rank: 532.6402737047898, head rank: 1357.6270772238515
+------------------------------------------
+Epoch 60 : valid_tail rank 527.4369501466275	 valid_head rank 1339.9584555229717
+Epoch 60 : valid_tail HIT@10 31.671554252199414	 valid_head HIT@!) 18.084066471163247
+------------------------------------------
+Best Validation Epoch till now Epoch 60, tail rank: 527.4369501466275, head rank: 1339.9584555229717
+------------------------------------------
+Epoch 65 : valid_tail rank 527.7986314760508	 valid_head rank 1327.3372434017595
+Epoch 65 : valid_tail HIT@10 31.573802541544477	 valid_head HIT@!) 18.23069403714565
+------------------------------------------
+Best Validation Epoch till now Epoch 65, tail rank: 527.7986314760508, head rank: 1327.3372434017595
+------------------------------------------
+Epoch 70 : valid_tail rank 533.2815249266862	 valid_head rank 1319.5791788856304
+Epoch 70 : valid_tail HIT@10 31.76930596285435	 valid_head HIT@!) 17.790811339198438
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 75 : valid_tail rank 541.6573802541544	 valid_head rank 1314.2375366568915
+Epoch 75 : valid_tail HIT@10 31.329423264907135	 valid_head HIT@!) 17.839687194525904
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 80 : valid_tail rank 552.0811339198436	 valid_head rank 1311.8064516129032
+Epoch 80 : valid_tail HIT@10 31.133919843597262	 valid_head HIT@!) 17.790811339198438
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 85 : valid_tail rank 563.896871945259	 valid_head rank 1311.039100684262
+Epoch 85 : valid_tail HIT@10 30.64516129032258	 valid_head HIT@!) 17.741935483870968
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 90 : valid_tail rank 576.1099706744868	 valid_head rank 1310.3680351906157
+Epoch 90 : valid_tail HIT@10 30.107526881720432	 valid_head HIT@!) 17.64418377321603
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 95 : valid_tail rank 588.3142717497557	 valid_head rank 1311.964320625611
+Epoch 95 : valid_tail HIT@10 29.960899315738025	 valid_head HIT@!) 17.44868035190616
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 100 : valid_tail rank 599.7150537634409	 valid_head rank 1313.5806451612902
+Epoch 100 : valid_tail HIT@10 29.91202346041056	 valid_head HIT@!) 17.10654936461388
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 105 : valid_tail rank 610.5342130987292	 valid_head rank 1315.793743890518
+Epoch 105 : valid_tail HIT@10 29.227761485826004	 valid_head HIT@!) 16.911045943304007
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 110 : valid_tail rank 621.2287390029326	 valid_head rank 1318.6554252199414
+Epoch 110 : valid_tail HIT@10 29.081133919843598	 valid_head HIT@!) 17.008797653958943
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 115 : valid_tail rank 632.4721407624634	 valid_head rank 1323.126099706745
+Epoch 115 : valid_tail HIT@10 29.03225806451613	 valid_head HIT@!) 16.862170087976537
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 120 : valid_tail rank 643.2424242424242	 valid_head rank 1326.807917888563
+Epoch 120 : valid_tail HIT@10 28.445747800586513	 valid_head HIT@!) 17.05767350928641
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 125 : valid_tail rank 654.024926686217	 valid_head rank 1331.6173020527858
+Epoch 125 : valid_tail HIT@10 27.76148582600195	 valid_head HIT@!) 16.81329423264907
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 130 : valid_tail rank 664.7155425219942	 valid_head rank 1335.7712609970674
+Epoch 130 : valid_tail HIT@10 27.468230694037143	 valid_head HIT@!) 16.715542521994134
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 135 : valid_tail rank 677.0767350928642	 valid_head rank 1340.8445747800586
+Epoch 135 : valid_tail HIT@10 27.419354838709676	 valid_head HIT@!) 16.568914956011728
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 140 : valid_tail rank 688.7160312805474	 valid_head rank 1345.8010752688172
+Epoch 140 : valid_tail HIT@10 26.97947214076246	 valid_head HIT@!) 16.52003910068426
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 145 : valid_tail rank 699.5738025415445	 valid_head rank 1351.0342130987292
+Epoch 145 : valid_tail HIT@10 26.441837732160312	 valid_head HIT@!) 16.422287390029325
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 150 : valid_tail rank 709.9139784946236	 valid_head rank 1357.6383186705768
+Epoch 150 : valid_tail HIT@10 26.050830889540567	 valid_head HIT@!) 16.080156402737046
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 155 : valid_tail rank 718.8714565004888	 valid_head rank 1361.836265884653
+Epoch 155 : valid_tail HIT@10 26.001955034213097	 valid_head HIT@!) 15.982404692082111
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 160 : valid_tail rank 727.4007820136852	 valid_head rank 1366.225806451613
+Epoch 160 : valid_tail HIT@10 25.855327468230694	 valid_head HIT@!) 15.73802541544477
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 165 : valid_tail rank 733.6964809384165	 valid_head rank 1369.5405669599218
+Epoch 165 : valid_tail HIT@10 25.65982404692082	 valid_head HIT@!) 15.395894428152493
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 170 : valid_tail rank 740.9266862170088	 valid_head rank 1373.1407624633432
+Epoch 170 : valid_tail HIT@10 25.61094819159335	 valid_head HIT@!) 15.249266862170089
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 175 : valid_tail rank 747.5840664711633	 valid_head rank 1377.1808406647117
+Epoch 175 : valid_tail HIT@10 25.41544477028348	 valid_head HIT@!) 15.151515151515152
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 180 : valid_tail rank 753.2370478983382	 valid_head rank 1379.8553274682306
+Epoch 180 : valid_tail HIT@10 25.12218963831867	 valid_head HIT@!) 15.347018572825025
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 185 : valid_tail rank 757.5635386119258	 valid_head rank 1383.2375366568915
+Epoch 185 : valid_tail HIT@10 25.268817204301076	 valid_head HIT@!) 15.298142717497557
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 190 : valid_tail rank 762.7800586510264	 valid_head rank 1387.2521994134897
+Epoch 190 : valid_tail HIT@10 25.366568914956012	 valid_head HIT@!) 15.004887585532748
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 195 : valid_tail rank 767.7248289345064	 valid_head rank 1390.4907135874878
+Epoch 195 : valid_tail HIT@10 25.41544477028348	 valid_head HIT@!) 15.102639296187684
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 200 : valid_tail rank 770.5654936461389	 valid_head rank 1392.6094819159334
+Epoch 200 : valid_tail HIT@10 25.268817204301076	 valid_head HIT@!) 15.347018572825025
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 205 : valid_tail rank 776.0723362658847	 valid_head rank 1394.6627565982405
+Epoch 205 : valid_tail HIT@10 25.024437927663733	 valid_head HIT@!) 15.249266862170089
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 210 : valid_tail rank 779.7629521016618	 valid_head rank 1396.9169110459434
+Epoch 210 : valid_tail HIT@10 24.87781036168133	 valid_head HIT@!) 15.347018572825025
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 215 : valid_tail rank 782.3338220918866	 valid_head rank 1398.11045943304
+Epoch 215 : valid_tail HIT@10 24.682306940371458	 valid_head HIT@!) 15.102639296187684
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 220 : valid_tail rank 786.217008797654	 valid_head rank 1399.9330400782014
+Epoch 220 : valid_tail HIT@10 24.731182795698924	 valid_head HIT@!) 15.102639296187684
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 225 : valid_tail rank 789.1783968719452	 valid_head rank 1400.7233626588466
+Epoch 225 : valid_tail HIT@10 24.437927663734115	 valid_head HIT@!) 14.95601173020528
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 230 : valid_tail rank 793.4907135874878	 valid_head rank 1403.202834799609
+Epoch 230 : valid_tail HIT@10 24.437927663734115	 valid_head HIT@!) 14.760508308895407
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 235 : valid_tail rank 797.5034213098729	 valid_head rank 1404.923264907136
+Epoch 235 : valid_tail HIT@10 24.193548387096776	 valid_head HIT@!) 14.809384164222875
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 240 : valid_tail rank 798.7873900293255	 valid_head rank 1405.7908113391984
+Epoch 240 : valid_tail HIT@10 24.193548387096776	 valid_head HIT@!) 14.66275659824047
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 245 : valid_tail rank 800.5874877810362	 valid_head rank 1407.6588465298144
+Epoch 245 : valid_tail HIT@10 24.242424242424242	 valid_head HIT@!) 14.41837732160313
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 250 : valid_tail rank 801.5527859237536	 valid_head rank 1406.7746823069403
+Epoch 250 : valid_tail HIT@10 24.242424242424242	 valid_head HIT@!) 14.41837732160313
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 255 : valid_tail rank 802.325513196481	 valid_head rank 1407.907135874878
+Epoch 255 : valid_tail HIT@10 24.242424242424242	 valid_head HIT@!) 14.369501466275661
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 260 : valid_tail rank 803.8602150537635	 valid_head rank 1408.6735092864126
+Epoch 260 : valid_tail HIT@10 24.144672531769306	 valid_head HIT@!) 14.369501466275661
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 265 : valid_tail rank 805.7160312805474	 valid_head rank 1410.0782013685239
+Epoch 265 : valid_tail HIT@10 24.144672531769306	 valid_head HIT@!) 14.467253176930598
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 270 : valid_tail rank 807.4916911045943	 valid_head rank 1410.47311827957
+Epoch 270 : valid_tail HIT@10 24.09579667644184	 valid_head HIT@!) 14.320625610948193
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 275 : valid_tail rank 806.9608993157381	 valid_head rank 1410.152981427175
+Epoch 275 : valid_tail HIT@10 23.851417399804497	 valid_head HIT@!) 14.222873900293257
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 280 : valid_tail rank 809.4740957966765	 valid_head rank 1412.0342130987292
+Epoch 280 : valid_tail HIT@10 23.655913978494624	 valid_head HIT@!) 14.222873900293257
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 285 : valid_tail rank 810.5283479960899	 valid_head rank 1414.1378299120236
+Epoch 285 : valid_tail HIT@10 23.607038123167158	 valid_head HIT@!) 14.467253176930598
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 290 : valid_tail rank 810.7355816226784	 valid_head rank 1415.0122189638319
+Epoch 290 : valid_tail HIT@10 23.607038123167158	 valid_head HIT@!) 14.271749755620725
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Epoch 295 : valid_tail rank 813.0058651026393	 valid_head rank 1416.455522971652
+Epoch 295 : valid_tail HIT@10 23.16715542521994	 valid_head HIT@!) 14.076246334310852
+------------------------------------------
+Best Validation Epoch till now Epoch 70, tail rank: 533.2815249266862, head rank: 1319.5791788856304
+------------------------------------------
+Traceback (most recent call last):
+  File "result_eval.py", line 16, in <module>
+    model_output_head = open('results/'+args.model+'/'+args.eval_mode+'_head_pred_{}.txt'.format(k))
+FileNotFoundError: [Errno 2] No such file or directory: 'results/yago_data_neg_sample_5_mar_10_l2_0.00_transfer/valid_head_pred_300.txt'
