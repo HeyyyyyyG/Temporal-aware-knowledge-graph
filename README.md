@@ -10,7 +10,26 @@
 所以我试了一下只将h,t投影到\tao上，r不投影，结果好像差不多。。。
 
 结果在result.xlsx中，现在只试了yago数据集。三行分别为他报告的结果、我跑他代码得到的结果、r不投影的结果。
+
 我跑他代码的结果比他论文里写的差一些，我是按照他说的最优超参数设置的，不排除他可能虚报了一些。
+
+若不看report的结果，会发现r不投影的方法在relation prediction上效果较好，说明r确实不应该虽时间变化。但其在entitiy prediction上效果不如r投影的好，不知为啥
+
+图1：关系"was born in" 在不同年代的表示（用r投影的方法得到的） (PCA)
+
+![original_wasbornin](./Figure/original_wasbornin.png)
+
+图2：关系"was born in" 在不同年代的表示（用r不投影的方法得到的）
+
+![r_not_transfer_wasbornin](./Figure/r_not_transfer_wasbornin.png)
+
+图3：所有关系 在不同年代的表示（用r投影的方法得到的） 
+
+![original_whole](./Figure/original_whole.png)
+
+图4：所有关系 在不同年代的表示（用r不投影的方法得到的）
+
+![r_not_transfer_whole](./Figure/r_not_transfer_whole.png)
 
 另外我看了一下知识图谱表示方法的transE/TransH/transR等系列方法
 
