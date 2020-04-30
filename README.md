@@ -33,6 +33,11 @@
 
 另外我看了一下知识图谱表示方法的transE/TransH/transR等系列方法
 
+## Update 4.30
+我试了一下让时间平面连续变化，在loss里面加了个 $$ \sum_{t=1}^T |(t1-t2)-(t2-t3)|_{l_1} $$ 
+效果好像差不多 见result.xlsx
+
+
 ## 接下来
 对于怎么继续改进他的东西，我没什么想法。。
 **ASK FOR YOUR IDEA!**
