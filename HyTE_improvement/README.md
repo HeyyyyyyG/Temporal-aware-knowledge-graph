@@ -32,12 +32,12 @@ inference using temporal guidance, but also predicts temporal scopes for relatio
 *  Some of the important Available options include:
   ```shell
   '-data_type' default ='yago', choices = ['yago','wiki_data'], help ='dataset to choose'
-	'-version',  default = 'large', choices = ['large','small'], help = 'data version to choose'
+	'-version',  default = 'large', choices = ['large','small','time','financial'], help = 'data version to choose'
 	'-test_freq', 	 default = 25,   	type=int, 	help='testing frequency'
 	'-neg_sample', 	 default = 5,   	type=int, 	help='negative samples for training'
 	'-gpu', 	 dest="gpu", 		default='1',			help='GPU to use'
 	'-name', 	 dest="name", 		help='Name of the run'
-	'-lr',	 dest="lr", 		default=0.0001,  type=float,	help='Learning rate'
+	'-lr',	 dest="lr", 		default=0.001,  type=float,	help='Learning rate'
 	'-margin', 	 dest="margin", 	default=1,   	type=float, 	help='margin'
 	'-batch', 	 dest="batch_size", 	default= 50000,   	type=int, 	help='Batch size'
 	'-epoch', 	 dest="max_epochs", 	default= 5000,   	type=int, 	help='Max epochs'

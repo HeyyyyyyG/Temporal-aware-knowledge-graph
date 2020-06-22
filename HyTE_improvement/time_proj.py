@@ -271,7 +271,11 @@ class HyTE(Model):
 		# self.entity_time = entity_time
 		self.max_rel = max_rel
 		self.max_ent = max_ent
+		print('max_ent',max_ent)
+		print('max_rel',max_rel)
 		self.max_time = len(self.year2id.keys())
+		print("year2id:",self.year2id,)
+		print(sorted(self.year2id.items()))
 		self.data = list(zip(self.ph, self.pt, self.r , self.nh, self.nt, self.triple_time))
 		self.data = self.data + self.data[0:self.p.batch_size]
 
@@ -371,7 +375,8 @@ class HyTE(Model):
 		with tf.name_scope("embedding"):
 			self.ent_embeddings = tf.get_variable(name = "ent_embedding",  shape = [self.max_ent, self.p.inp_dim], initializer = tf.contrib.layers.xavier_initializer(uniform = False), regularizer=self.regularizer)
 			self.rel_embeddings = tf.get_variable(name = "rel_embedding",  shape = [self.max_rel, self.p.inp_dim], initializer = tf.contrib.layers.xavier_initializer(uniform = False), regularizer=self.regularizer)
-			self.time_embeddings = tf.get_variable(name = "time_embedding",shape = [self.max_time, self.p.inp_dim], initializer = tf.contrib.layers.xavier_initializer(uniform =False))
+			#self.time_embeddings = tf.get_variable(name = "time_embedding",shape = [self.max_time, self.p.inp_dim], initializer = tf.contrib.layers.xavier_initializer(uniform =False))
+			self.time_embeddings = tf.get_variable(name = "time_embedding",shape = [6, self.p.inp_dim], initializer = tf.contrib.layers.xavier_initializer(uniform =False))
 			#self.transfer_embeddings = tf.get_variable(name = "transfer_embedding",  shape = [self.p.inp_dim, self.p.inp_dim], initializer = tf.contrib.layers.xavier_initializer(uniform = False), regularizer=self.regularizer)
 
 		transE_in_dim = self.p.inp_dim
@@ -427,7 +432,23 @@ class HyTE(Model):
 		neg_t_e = tf.squeeze(tf.nn.embedding_lookup(transE_in, self.neg_tail))
 
 		#### ----- time -----###
-		t_1 = tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, self.start_year))
+		#print(self.start_year.get_shape().as_list())
+		#t_1 = tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, self.start_year))
+		t0 = tf.reshape(tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, 0)),[1,self.p.inp_dim])
+		#t0 = tf.tile(t0,[self.p.batch_size,1])
+		eta_mu = tf.reshape(tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, 2)),[1,self.p.inp_dim])
+		eta_sigma = tf.reshape(tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, 3)),[1,self.p.inp_dim])
+		eta_mu2 = tf.reshape(tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, 4)),[1,self.p.inp_dim])
+		eta_sigma2 = tf.reshape(tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, 5)),[1,self.p.inp_dim])
+		eta = tf.random_normal([1,self.p.inp_dim])
+		eta = eta * eta_sigma+eta_mu
+		eta2 = eta*eta_sigma2+eta_mu2
+		year2 = self.start_year*self.start_year/10
+		year = tf.expand_dims(tf.to_float(self.start_year),1)
+		year2 = tf.expand_dims(tf.to_float(year2),1)
+		#year = tf.reshape(tf.to_float(self.start_year),[self.start_year.get_shape().as_list()[0],1])
+		t_1 = t0+tf.matmul(year,eta)+tf.matmul(year2,eta2)
+		print("t_1.shape",t_1.shape)
 		#print('pos_h_e.shape',pos_h_e.get_shape(),neg_h_e.get_shape())
 		#########===========类似transR====================##############
 		'''
@@ -437,27 +458,23 @@ class HyTE(Model):
 		pos_t_e = tf.matmul(pos_t_e , self.transfer_embeddings)
 		neg_t_e = tf.matmul(neg_t_e , self.transfer_embeddings)
 		'''
-		'''
+
 		pos_h_e_t_1 = self.time_projection(pos_h_e,t_1)
 		neg_h_e_t_1 = self.time_projection(neg_h_e,t_1)
 		pos_t_e_t_1 = self.time_projection(pos_t_e,t_1)
 		neg_t_e_t_1 = self.time_projection(neg_t_e,t_1)
-		#pos_r_e_t_1 = self.time_projection(pos_r_e,t_1)
-		pos_r_e_t_1 = pos_r_e
-		'''
+		pos_r_e_t_1 = self.time_projection(pos_r_e,t_1)
+		#pos_r_e_t_1 = pos_r_e
+
 		if self.p.L1_flag:
-			#pos = tf.reduce_sum(abs(pos_h_e_t_1 + pos_r_e_t_1 - pos_t_e_t_1), 1, keep_dims = True)
-			#neg = tf.reduce_sum(abs(neg_h_e_t_1 + pos_r_e_t_1 - neg_t_e_t_1), 1, keep_dims = True)
-			##########tuple整体投影到时间空间上#########
-			pos = tf.reduce_sum(abs(self.time_projection(pos_h_e + pos_r_e - pos_t_e,t_1)), 1, keep_dims = True)
-			neg = tf.reduce_sum(abs(self.time_projection(neg_h_e + pos_r_e - neg_t_e, t_1)), 1, keep_dims = True)
+			pos = tf.reduce_sum(abs(pos_h_e_t_1 + pos_r_e_t_1 - pos_t_e_t_1), 1, keep_dims = True)
+			neg = tf.reduce_sum(abs(neg_h_e_t_1 + pos_r_e_t_1 - neg_t_e_t_1), 1, keep_dims = True)
+
 			#self.predict = pos
 		else:
-			#pos = tf.reduce_sum((pos_h_e_t_1 + pos_r_e_t_1 - pos_t_e_t_1) ** 2, 1, keep_dims = True)
-			#neg = tf.reduce_sum((neg_h_e_t_1 + pos_r_e_t_1 - neg_t_e_t_1) ** 2, 1, keep_dims = True)
-			##########tuple整体投影到时间空间上#########
-			pos = tf.reduce_sum((self.time_projection(pos_h_e + pos_r_e - pos_t_e, t_1)) ** 2, 1, keep_dims = True)
-			neg = tf.reduce_sum((self.time_projection(neg_h_e + pos_r_e - neg_t_e, t_1)) ** 2, 1, keep_dims = True)
+			pos = tf.reduce_sum((pos_h_e_t_1 + pos_r_e_t_1 - pos_t_e_t_1) ** 2, 1, keep_dims = True)
+			neg = tf.reduce_sum((neg_h_e_t_1 + pos_r_e_t_1 - neg_t_e_t_1) ** 2, 1, keep_dims = True)
+
 			#self.predict = pos
 
 		'''
@@ -468,6 +485,24 @@ class HyTE(Model):
 	def add_loss(self, pos, neg):
 		with tf.name_scope('Loss_op'):
 			loss     = tf.reduce_sum(tf.maximum(pos - neg + self.p.margin, 0))
+			'''
+			for i in range(self.time_embeddings.shape[0]-1): 
+				t_1 = tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, i))
+				t_2 = tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, i+1))
+				dot_product = t_1*t_2
+				denom = tf.nn.l2_normalize(t_1)*tf.nn.l2_normalize(t_2)
+				cos = dot_product/denom
+				loss += tf.maximum((cos-1)*(cos-1)-0.01,0)
+			'''
+			'''
+			for i in range(self.time_embeddings.shape[0]-2):#约束time连续变化
+				t_1 = tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, i))
+				t_2 = tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, i+1))
+				t_3 = tf.squeeze(tf.nn.embedding_lookup(self.time_embeddings, i+2))
+				ts = (t_1-t_2)-(t_2-t_3)
+				loss_time = tf.reduce_sum(tf.maximum(ts,-ts))
+				loss+=1000*loss_time
+			'''
 			if self.regularizer != None: loss += tf.contrib.layers.apply_regularization(self.regularizer, tf.get_collection(tf.GraphKeys.REGULARIZATION_LOSSES))
 			return loss
 
@@ -535,10 +570,15 @@ class HyTE(Model):
 					fileout_rel  = open(save_dir_results +'/valid_rel_pred_{}.txt'.format(epoch), 'w')
 					for i,t in enumerate(validation_data):
 						score = self.calculated_score_for_positive_elements(t, epoch, f_valid, 'valid')
+						#print(score[1])
+						#print(np.asarray([score[2]]))
+						#print(np.atleast_1d(score[2]))
+						#print(score[2].shape)
+						#print(' '.join([str(x) for x in score[2]] ))
 						if score:
 							fileout_head.write(' '.join([str(x) for x in score[0]]) + '\n')
 							fileout_tail.write(' '.join([str(x) for x in score[1]]) + '\n')
-							fileout_rel.write (' '.join([str(x) for x in score[2]] ) + '\n')
+							fileout_rel.write (' '.join([str(x) for x in np.asarray([score[2]])] ) + '\n')
 				
 						if i%500 == 0:
 							print('{}. no of valid_triples complete'.format(i))
@@ -568,25 +608,26 @@ class HyTE(Model):
 			fileout_tail.close()
 			fileout_rel.close()
 			print("Test ended")
+			return self.time_embeddings,self.rel_embeddings
 
 if __name__== "__main__":
 	print('here in main')
 	parser = argparse.ArgumentParser(description='HyTE')
 
 	parser.add_argument('-data_type', dest= "data_type", default ='yago', choices = ['yago','wiki_data'], help ='dataset to choose')
-	parser.add_argument('-version',dest = 'version', default = 'large', choices = ['large','small'], help = 'data version to choose')
+	parser.add_argument('-version',dest = 'version', default = 'large', choices = ['large','small','time','financial'], help = 'data version to choose')
 	parser.add_argument('-test_freq', 	 dest="test_freq", 	default = 25,   	type=int, 	help='Batch size')
 	parser.add_argument('-neg_sample', 	 dest="M", 		default = 5,   	type=int, 	help='Batch size')
 	parser.add_argument('-gpu', 	 dest="gpu", 		default='1',			help='GPU to use')
 	parser.add_argument('-name', 	 dest="name", 		default='test_'+str(uuid.uuid4()),help='Name of the run')
 	parser.add_argument('-drop',	 dest="dropout", 	default=1.0,  	type=float,	help='Dropout for full connected layer')
 	parser.add_argument('-rdrop',	 dest="rec_dropout", 	default=1.0,  	type=float,	help='Recurrent dropout for LSTM')
-	parser.add_argument('-lr',	 dest="lr", 		default=0.0001,  type=float,	help='Learning rate')
+	parser.add_argument('-lr',	 dest="lr", 		default=0.01,  type=float,	help='Learning rate')
 	parser.add_argument('-lam_1',	 dest="lambda_1", 		default=0.5,  type=float,	help='transE weight')
 	parser.add_argument('-lam_2',	 dest="lambda_2", 		default=0.25,  type=float,	help='entitty loss weight')
 	parser.add_argument('-margin', 	 dest="margin", 	default=1,   	type=float, 	help='margin')
 	parser.add_argument('-batch', 	 dest="batch_size", 	default= 50000,   	type=int, 	help='Batch size')
-	parser.add_argument('-epoch', 	 dest="max_epochs", 	default= 5000,   	type=int, 	help='Max epochs')
+	parser.add_argument('-epoch', 	 dest="max_epochs", 	default= 400,   	type=int, 	help='Max epochs')
 	parser.add_argument('-l2', 	 dest="l2", 		default=0.0, 	type=float, 	help='L2 regularization')
 	parser.add_argument('-seed', 	 dest="seed", 		default=1234, 	type=int, 	help='Seed for randomization')
 	parser.add_argument('-inp_dim',  dest="inp_dim", 	default = 128,   	type=int, 	help='Hidden state dimension of Bi-LSTM')
@@ -614,4 +655,11 @@ if __name__== "__main__":
 	with tf.Session(config=config) as sess:
 		sess.run(tf.global_variables_initializer())
 		print('enter fitting')
-		model.fit(sess)
+		time_embeddings,rel_embeddings = model.fit(sess)
+		print(self.start_year.shape())
+		time_embeddings = time_embeddings.eval()
+		rel_embeddings = rel_embeddings.eval()
+	print('time_embeddings',time_embeddings.shape,"rel_embeddings",rel_embeddings.shape)
+	np.save(args.name+'time_embeddings',time_embeddings)
+	np.save(args.name+'rel_embeddings',rel_embeddings)
+	print('save done')
